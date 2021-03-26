@@ -263,53 +263,55 @@ export namespace CoreTypes {
 		export const light = 'light';
 		export const dark = 'dark';
 	}
-
-	// Accuracy,
-	// AndroidActionBarIconVisibility,
-	// AndroidActionItemPosition,
-	// AnimationCurve,
-	// AutocapitalizationType,
-	// AutocapitalizationInputType: typeof AutocapitalizationType,
-	// BackgroundRepeat,
-	// BackgroundRepeatType: typeof BackgroundRepeat,
-	// DeviceOrientation,
-	// DeviceType,
-	// Dock,
-	// FontAttributes,
-	// FontStyle,
-	// FontStyleType: typeof FontStyle,
-	// FontWeight,
-	// FontWeightType: typeof FontWeight,
-	// HorizontalAlignment,
-	// HorizontalAlignmentType: typeof HorizontalAlignment,
-	// IOSActionItemPosition,
-	// ImageFormat,
-	// KeyboardType,
-	// KeyboardInputType: typeof KeyboardType,
-	// NavigationBarVisibility,
-	// Orientation,
-	// OrientationType: typeof Orientation,
-	// ReturnKeyType,
-	// StatusBarStyle,
-	// Stretch,
-	// SystemAppearance,
-	// TextAlignment,
-	// TextAlignmentType: typeof TextAlignment,
-	// TextDecoration,
-	// TextDecorationType: typeof TextDecoration,
-	// TextTransform,
-	// TextTransformType: typeof TextTransform,
-	// UpdateTextTrigger,
-	// UpdateTextTriggerType: typeof UpdateTextTrigger,
-	// VerticalAlignment,
-	// VerticalAlignmentType: typeof VerticalAlignment,
-	// Visibility,
-	// VisibilityType: typeof Visibility,
-	// WhiteSpace,
-	// WhiteSpaceType: typeof WhiteSpace
 }
+
+/**
+ * @deprecated Use `CoreTypes.dip` instead.
+ */
+export type dip = number;
+
+/**
+ * @deprecated Use `CoreTypes.px` instead.
+ */
+export type px = number;
+
+/**
+ * @deprecated Use `CoreTypes.percent` instead.
+ */
+export type percent = number;
+
+/**
+ * @deprecated Use `CoreTypes.LengthDipUnit` instead.
+ */
+export type LengthDipUnit = { readonly unit: 'dip'; readonly value: dip };
+/**
+ * @deprecated Use `CoreTypes.LengthPxUnit` instead.
+ */
+export type LengthPxUnit = { readonly unit: 'px'; readonly value: px };
+/**
+ * @deprecated Use `CoreTypes.LengthPercentUnit` instead.
+ */
+export type LengthPercentUnit = { readonly unit: '%'; readonly value: percent };
+
+/**
+ * @deprecated Use `CoreTypes.LengthType` instead.
+ */
+export type LengthType = 'auto' | dip | LengthDipUnit | LengthPxUnit;
+/**
+ * @deprecated Use `CoreTypes.PercentLengthType` instead.
+ */
+export type PercentLengthType = 'auto' | dip | LengthDipUnit | LengthPxUnit | LengthPercentUnit;
 
 /**
  * @deprecated Use `CoreTypes` instead. Enums will be removed in 9.0
  */
-export const Enums: typeof CoreTypes = CoreTypes;
+export namespace Enums {
+	export type DeviceOrientationType = CoreTypes.DeviceOrientationType;
+	export type HorizontalAlignmentType = CoreTypes.HorizontalAlignmentType;
+	export type VerticalAlignmentTextType = CoreTypes.VerticalAlignmentTextType;
+	export type VerticalAlignmentType = CoreTypes.VerticalAlignmentType;
+	export type OrientationType = CoreTypes.OrientationType;
+	export type TextAlignmentType = CoreTypes.TextAlignmentType;
+	export type TextTransformType = CoreTypes.TextTransformType;
+	export type VisibilityType = CoreTypes.VisibilityType;
+}

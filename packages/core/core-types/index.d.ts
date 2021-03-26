@@ -755,6 +755,52 @@ export namespace CoreTypes {
 }
 
 /**
+ * @deprecated Use `CoreTypes.dip` instead.
+ */
+export type dip = number;
+
+/**
+ * @deprecated Use `CoreTypes.px` instead.
+ */
+export type px = number;
+
+/**
+ * @deprecated Use `CoreTypes.percent` instead.
+ */
+export type percent = number;
+
+/**
+ * @deprecated Use `CoreTypes.LengthDipUnit` instead.
+ */
+export type LengthDipUnit = { readonly unit: 'dip'; readonly value: dip };
+/**
+ * @deprecated Use `CoreTypes.LengthPxUnit` instead.
+ */
+export type LengthPxUnit = { readonly unit: 'px'; readonly value: px };
+/**
+ * @deprecated Use `CoreTypes.LengthPercentUnit` instead.
+ */
+export type LengthPercentUnit = { readonly unit: '%'; readonly value: percent };
+
+/**
+ * @deprecated Use `CoreTypes.LengthType` instead.
+ */
+export type LengthType = 'auto' | dip | LengthDipUnit | LengthPxUnit;
+/**
+ * @deprecated Use `CoreTypes.PercentLengthType` instead.
+ */
+export type PercentLengthType = 'auto' | dip | LengthDipUnit | LengthPxUnit | LengthPercentUnit;
+
+/**
  * @deprecated Use `CoreTypes` instead. Enums will be removed in 9.0
  */
-export const Enums: typeof CoreTypes;
+export namespace Enums {
+	export type DeviceOrientationType = CoreTypes.DeviceOrientationType;
+	export type HorizontalAlignmentType = CoreTypes.HorizontalAlignmentType;
+	export type VerticalAlignmentTextType = CoreTypes.VerticalAlignmentTextType;
+	export type VerticalAlignmentType = CoreTypes.VerticalAlignmentType;
+	export type OrientationType = CoreTypes.OrientationType;
+	export type TextAlignmentType = CoreTypes.TextAlignmentType;
+	export type TextTransformType = CoreTypes.TextTransformType;
+	export type VisibilityType = CoreTypes.VisibilityType;
+}
